@@ -1,0 +1,9 @@
+{
+  "apps": [
+    {
+      "appId": "demo",
+      "publishSecret": "change-me-publish",
+      "checkSecret": "change-me-check"
+    }
+  ]
+}

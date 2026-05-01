@@ -1,0 +1,21 @@
+services:
+  jxupdate:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "${JXUPDATE_PORT:-8787}:8787"
+    environment:
+      NODE_ENV: production
+      PORT: "8787"
+      JXUPDATE_DATA_DIR: /data
+      JXUPDATE_APPS_CONFIG: /data/apps-config.json
+      # Public URL clients use for absolute download URLs in check-update responses
+      JXUPDATE_PUBLIC_BASE_URL: ${JXUPDATE_PUBLIC_BASE_URL:-http://localhost:8787}
+    volumes:
+      - jxupdate_data:/data
+      # Replace with your own file; this mounts the example for local smoke tests only
+      - ./apps-config.example.json:/data/apps-config.json:ro
+
+volumes:
+  jxupdate_data:

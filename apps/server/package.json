@@ -1,0 +1,26 @@
+{
+  "name": "@jxupdate/server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "node --watch dist/index.js",
+    "start": "node dist/index.js",
+    "clean": "rm -rf dist",
+    "lint": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@fastify/multipart": "^9.0.1",
+    "@jxupdate/protocol": "workspace:*",
+    "fastify": "^5.2.0",
+    "semver": "^7.6.3",
+    "ulid": "^2.3.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/semver": "^7.5.8",
+    "typescript": "^5.7.2"
+  }
+}
